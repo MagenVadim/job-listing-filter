@@ -3,7 +3,6 @@ import {useState} from 'react';
 import {useEffect} from 'react';
 
 export default function Job({data, setKeywords}) {
-  // console.log(data.company)
 
   let keywords = [data.role, data.level, ...data.languages, ... data.tools]
   
@@ -19,7 +18,6 @@ export default function Job({data, setKeywords}) {
 useEffect(()=>{
   importSvgs()
 }, [data.logo])
-
 
 
   return (
@@ -48,8 +46,7 @@ useEffect(()=>{
       <div className="part2">
         {
           keywords.map((key, id)=>(
-            <button onClick={()=> setKeywords(key)} key={id}>{key}</button>
-            
+            <button onClick={()=> setKeywords(key)} key={id}>{key}</button>            
           ))
         }
       </div>

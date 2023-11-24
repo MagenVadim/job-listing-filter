@@ -13,11 +13,16 @@ function App() {
     }
   }
 
+  const deleteKeyword = (data) => {
+    const newKeyWords = filterKeyWords.filter(key => key!=data);
+    setFilterKeyWords(newKeyWords)
+  } 
+
   return (
     <div>
       <div className="header"></div>
       {
-        filterKeyWords.length>0 && <Header keywords={filterKeyWords}/>
+        filterKeyWords.length>0 && <Header keywords={filterKeyWords} removeKeyWords = {deleteKeyword}/>
       }
       <Jobs data={data} setKeywords={addFilterKeyWords}/>
     </div>
