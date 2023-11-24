@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react';
 import {useEffect} from 'react';
 
-export default function Job({data}) {
+export default function Job({data, setKeywords}) {
   // console.log(data.company)
 
   let keywords = [data.role, data.level, ...data.languages, ... data.tools]
@@ -48,7 +48,8 @@ useEffect(()=>{
       <div className="part2">
         {
           keywords.map((key, id)=>(
-            <button key={id}>{key}</button>
+            <button onClick={()=> setKeywords(key)} key={id}>{key}</button>
+            
           ))
         }
       </div>
