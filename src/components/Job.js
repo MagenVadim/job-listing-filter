@@ -10,7 +10,6 @@ export default function Job({data, setKeywords}) {
  
   const importSvgs = ()=>{
     const logoSvg = import(`${data.logo}`).then(d=>{
-      console.log(d);
       setIcon(d.default)
     })
   }
