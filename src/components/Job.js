@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 import {useEffect} from 'react';
+import '../scss/job.scss';
 
 export default function Job({data, setKeywords}) {
 
@@ -28,8 +29,8 @@ useEffect(()=>{
       <div className="part1">
 
         <div className="company">
-          <div className="companyName">{data.company}</div>
-          {data.new && <span className="new">!new</span>}
+          <span className="companyName">{data.company}</span>
+          {data.new && <span className="new">new!</span>}
           {data.featured && <span className="featured">featured</span>}
         </div>
 
