@@ -37,7 +37,9 @@ useEffect(()=>{
         <div className="position">{data.position}</div>
         <div className="details">
           <span>{data.postedAt}</span>
+          <span>&nbsp;•&nbsp;</span>
           <span>{data.contract}</span>
+          <span>&nbsp;•&nbsp;</span>
           <span>{data.location}</span>
         </div>
 
@@ -46,7 +48,7 @@ useEffect(()=>{
       <div className="part2">
         {
           keywords.map((key, id)=>(
-            <button onClick={()=> setKeywords(key)} key={id}>{key}</button>            
+            <span onClick={()=> setKeywords(key)} key={id}>{key}</span>            
           ))
         }
       </div>

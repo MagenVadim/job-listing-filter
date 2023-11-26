@@ -41,8 +41,35 @@
                 background-color: var(--very-dark-grayish);
             }
         }
-    }
 
+        .position{
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 0.7rem 0;
+        }
+        .details{
+            color: var(--dark-grayish);
+        }
+    }
+    .part2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        span{
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
 
 }
 
