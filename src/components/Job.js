@@ -21,7 +21,7 @@ useEffect(()=>{
 
 
   return (
-    <div className="job-container">
+    <div className={data.featured ? "job-container job-container--borderLeft":  "job-container"}>
       <div className="logo">
         <img src={icon} alt="" />
       </div>
