@@ -10,7 +10,7 @@ export default function Header({keywords, removeKeyWords, clearAll}) {
           {
             return (
               <li key={id}> {key}
-              <button onClick={()=>removeKeyWords(key)}>
+              <button className='close' onClick={()=>removeKeyWords(key)}>
                 <img src={close} alt="" />
               </button>
             </li>
