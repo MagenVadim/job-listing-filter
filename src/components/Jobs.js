@@ -7,6 +7,17 @@ export default function Jobs({data, setKeywords, keywords}) {
   
   const [filteredData, setfilteredData] = useState([])
 
+  // const SearchFunc = ()=>{
+  //   if(keywords.length>0){
+  //     const newData = filteredData.filter((d)=> {
+  //       return d.position.toLocalLowerCase().includes(keywords)
+  //     })
+  //     setfilteredData(newData)
+  //   } else {
+  //     setfilteredData(data)
+  //   }
+  // }   
+
   const modifiedData = ()=>{
     if(keywords.length>0){
       const newData = filteredData.filter((d)=>{
@@ -27,6 +38,7 @@ export default function Jobs({data, setKeywords, keywords}) {
   
   useEffect(() => {
     modifiedData()
+    // SearchFunc()
   }, [keywords])
   
 

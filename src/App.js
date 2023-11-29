@@ -2,10 +2,16 @@ import data from './data.json';
 import Jobs from './components/Jobs'
 import Header from "./components/Header"
 import {useState} from 'react';
+import Search from "./components/Search"
 
 function App() {
 
   const [filterKeyWords, setFilterKeyWords] = useState([])
+
+  // const setSearchKeyword = (data) =>{
+  //   setFilterKeyWords(data);
+  // }
+
 
   const addFilterKeyWords = (data) =>{
     if(!filterKeyWords.includes(data)){
@@ -25,6 +31,8 @@ function App() {
   return (
     <div>
       <div className="header"></div>
+      {/* <Search setSearchKeyword={setSearchKeyword}/> */}
+
       {
         filterKeyWords.length>0 &&
          <Header 
@@ -32,6 +40,7 @@ function App() {
         removeKeyWords = {deleteKeyword}
         clearAll={clearAll}/>
       }
+
       <Jobs
        keywords={filterKeyWords}
        data={data}
