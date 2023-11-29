@@ -74,6 +74,11 @@
             font-size: 1.1rem;
             display: inline-block;
             padding: 0.7rem 0;
+            cursor: pointer;
+
+            &:hover{
+                color: var(--primary-color);
+            }
         }
         .details{
             color: var(--dark-grayish);
@@ -92,6 +97,10 @@
         span{
             &:not(:last-child){
                 margin-right: 1rem;
+            }
+            &:hover{
+                background-color: var(--primary-color);
+                color: #fff;
             }
 
             @media only screen and(max-width: 365px){
