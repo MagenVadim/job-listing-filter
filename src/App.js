@@ -8,10 +8,11 @@ function App() {
 
   const [filterKeyWords, setFilterKeyWords] = useState([])
 
-  // const setSearchKeyword = (data) =>{
-  //   setFilterKeyWords(data);
-  // }
-
+  const [query, setQuery] = useState("")
+  const handleInputChange = (event)=>{
+    console.log(event.target.value)
+    setQuery(event.target.value)
+  }
 
   const addFilterKeyWords = (data) =>{
     if(!filterKeyWords.includes(data)){
@@ -31,7 +32,7 @@ function App() {
   return (
     <div>
       <div className="header"></div>
-      {/* <Search setSearchKeyword={setSearchKeyword}/> */}
+      <Search query={query} handleInputChange={handleInputChange}/>
 
       {
         filterKeyWords.length>0 &&
