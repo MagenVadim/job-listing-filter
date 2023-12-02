@@ -19,8 +19,6 @@ function App() {
     (d) => d.position.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
 
-
-
   const addFilterKeyWords = (data) =>{
     if(!filterKeyWords.includes(data)){
       setFilterKeyWords([...filterKeyWords, data])

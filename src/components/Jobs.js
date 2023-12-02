@@ -8,12 +8,6 @@ export default function Jobs({data, setKeywords, keywords, filteredItems}) {
   const [filteredData, setfilteredData] = useState([])
 
   const modifiedData = ()=>{
-    if(filteredItems.length>0){
-      const newData=filteredItems
-      setfilteredData(newData)
-      return
-    }
-
     if(keywords.length>0){
       const newData = filteredData.filter((d)=>{
         return keywords.every((key)=>{
@@ -26,8 +20,16 @@ export default function Jobs({data, setKeywords, keywords, filteredItems}) {
       })
       console.log(newData)
       setfilteredData(newData)
-    }else{
+    }
+    else if(filteredItems.length>0 && filteredItems.length<data.length){
+      const newData=filteredItems
+      setfilteredData(newData)
+      console.log(filteredItems.length)
+      return
+    }
+    else{
       setfilteredData(data)
+      console.log("else")
     }
     
   }
