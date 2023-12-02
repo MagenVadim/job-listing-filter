@@ -9,10 +9,17 @@ function App() {
   const [filterKeyWords, setFilterKeyWords] = useState([])
 
   const [query, setQuery] = useState("")
+
   const handleInputChange = (event)=>{
-    console.log(event.target.value)
     setQuery(event.target.value)
+    // data.forEach((d)=>console.log(d.position))
   }
+
+  const filteredItems = data.filter(
+    (d) => d.position.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  );
+
+
 
   const addFilterKeyWords = (data) =>{
     if(!filterKeyWords.includes(data)){
@@ -44,6 +51,7 @@ function App() {
 
       <Jobs
        keywords={filterKeyWords}
+       filteredItems={filteredItems}
        data={data}
        setKeywords={addFilterKeyWords}/>
     </div>

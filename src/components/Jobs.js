@@ -3,22 +3,17 @@ import Job from './Job'
 import {useEffect} from 'react';
 import '../scss/jobs.scss';
 
-export default function Jobs({data, setKeywords, keywords}) {
+export default function Jobs({data, setKeywords, keywords, filteredItems}) {
   
   const [filteredData, setfilteredData] = useState([])
 
-  // const SearchFunc = ()=>{
-  //   if(keywords.length>0){
-  //     const newData = filteredData.filter((d)=> {
-  //       return d.position.toLocalLowerCase().includes(keywords)
-  //     })
-  //     setfilteredData(newData)
-  //   } else {
-  //     setfilteredData(data)
-  //   }
-  // }   
-
   const modifiedData = ()=>{
+    if(filteredItems.length>0){
+      const newData=filteredItems
+      setfilteredData(newData)
+      return
+    }
+
     if(keywords.length>0){
       const newData = filteredData.filter((d)=>{
         return keywords.every((key)=>{
@@ -29,20 +24,20 @@ export default function Jobs({data, setKeywords, keywords}) {
             d.tools.includes(key)
           )})     
       })
-
+      console.log(newData)
       setfilteredData(newData)
     }else{
       setfilteredData(data)
     }
+    
   }
   
   useEffect(() => {
     modifiedData()
-    // SearchFunc()
-  }, [keywords])
+  }, [keywords, filteredItems])
   
 
-  return (
+  return (    
     <div className="jobs">
       {filteredData.map((d)=>{
         return(
